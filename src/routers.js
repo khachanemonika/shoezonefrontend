@@ -2,6 +2,8 @@ import {createRouter,createWebHistory} from 'vue-router'
 import Home from './components/Home.vue'
 import Product from './components/Product/Product.vue';
 import HomeProduct from './components/Product/HomeProduct.vue';
+import RegisterUser from './components/Customer/RegisterUser.vue';
+import Customer from './components/Customer/Customer.vue';
 
 const routes=[
     {
@@ -43,7 +45,31 @@ const routes=[
         }
     
     ]
-}
+    },
+    {
+        name:'Customer',
+        path:'/customer',
+        component:Customer,
+
+        children:[
+            {
+                name:'registerUser',
+                path:'/regUser',
+                component:()=> import('@/components/Customer/RegisterUser.vue')
+            },
+            {
+                name:'ViewUser',
+                path:'/ViewUser',
+                component :()=>import('@/components/Customer/ViewUser.vue')
+            },
+            {
+                name:'EditUser',
+                path:'/editUser/:id',
+                component :()=>import('@/components/Customer/RegisterUser.vue')
+            }
+        ]
+
+    }
     
 ];
 

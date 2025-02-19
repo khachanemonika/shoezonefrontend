@@ -15,7 +15,7 @@
             </v-btn>
         </v-toolbar-title>
         <v-toolbar-title>
-            <v-btn text to="/view">
+            <v-btn text to="/customer">
                 Customer
             </v-btn>
         </v-toolbar-title>

@@ -49,7 +49,7 @@
     </v-container>
   </v-card>
 
-  <v-dialog v-model="showDialog" width="300px">
+  <v-dialog v-model="showDialog" width="200px">
     <v-card>
       <v-card-text>Save Product Data</v-card-text>
       <v-card-actions>
@@ -61,6 +61,7 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
+
 </template>
 
 <script>
@@ -106,7 +107,7 @@ export default {
     },
     async addProduct() {
       try {
-        const productData = { ...this.Product };
+        const productData = this.Product;
         await axios.post("https://localhost:7226/api/Product", productData);
       } catch (error) {
         console.error(error);
@@ -115,7 +116,7 @@ export default {
     },
     fetchProduct(id) {
       axios
-        .get(`https://localhost:7226/api/Product/${id}`)
+        .get('https://localhost:7226/api/Product/'+id)
         .then((response) => {
           this.Product = response.data;
         })
@@ -128,7 +129,7 @@ export default {
     async updateProduct() {
       try {
         await axios.put(
-          `https://localhost:7226/api/Product/${this.$route.params.id}`,
+          'https://localhost:7226/api/Product/'+this.$route.params.id,
           this.Product
         );
       } catch (error) {
