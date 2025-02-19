@@ -9,16 +9,12 @@
                 Home
             </v-btn>
         </v-toolbar-title>
-        <v-toolbar-title>
-            <v-btn text to="/regUser">
-                Register Customer
+        
+       <!-- <v-toolbar-title>
+            <v-btn text to="/ordersummary">
+                Orders
             </v-btn>
-        </v-toolbar-title>
-        <v-toolbar-title>
-            <v-btn text to="/ViewUser">
-            View Customer
-            </v-btn>
-        </v-toolbar-title>
+        </v-toolbar-title>-->
 
         
     </v-toolbar>
@@ -28,7 +24,7 @@
     
     <script>
     export default {
-        name: 'Customer',
+        name: 'Order',
     
         data() {
             return {

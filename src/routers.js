@@ -4,6 +4,9 @@ import Product from './components/Product/Product.vue';
 import HomeProduct from './components/Product/HomeProduct.vue';
 import RegisterUser from './components/Customer/RegisterUser.vue';
 import Customer from './components/Customer/Customer.vue';
+import Order from './components/Order/Order.vue';
+
+const cart = [];
 
 const routes=[
     {
@@ -46,6 +49,21 @@ const routes=[
     
     ]
     },
+    { 
+        
+        name:'seeproduct',
+                path:'/seeproduct',
+                props: { cart },
+                component :() => import('@/components/Order/SeeProduct.vue')
+            },
+            {
+                name:'ordersummary',
+                path:'/ordersummary',
+                props: { cart },
+                component :() => import('@/components/Order/OrderSummary.vue')
+            },
+        
+    
     {
         name:'Customer',
         path:'/customer',

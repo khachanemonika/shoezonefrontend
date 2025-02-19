@@ -10,7 +10,7 @@
             </v-btn>
         </v-toolbar-title>
         <v-toolbar-title>
-            <v-btn text to="/view">
+            <v-btn text to="/seeproduct">
                 Order
             </v-btn>
         </v-toolbar-title>
