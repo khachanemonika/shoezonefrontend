@@ -6,10 +6,10 @@
       class="elevation-1" dense>
       <template v-slot:item.actions="{ item }">
         <router-link :to="'/editUser/'+ item.CustomerId">
-        <v-icon @click="editUser(item)" color="blue">mdi-pencil
+        <v-icon  color="blue">mdi-pencil
            
         </v-icon></router-link>
-        <v-icon @click="deleteUser(item)" color="red">mdi-delete</v-icon>
+        <v-icon @click="deleteUser(item.CustomerId)" color="red">mdi-delete</v-icon>
       </template>
     </v-data-table>
     
@@ -61,10 +61,23 @@ methods:{
             console.error(error);
         }
     },
-    editUser(item)
-    {
 
+    async deleteUser(id)
+    {
+        try{
+            let result = await axios.delete("https://localhost:7226/api/Customer/"+id);
+                    alert("delete");
+                location.reload();
+      if (result.status == 200) {
+        this.getproduct();
+      } 
+       }
+        catch(error)
+        {
+            console.log(error)
+        }
     }
+    
 }
 }
 </script>
